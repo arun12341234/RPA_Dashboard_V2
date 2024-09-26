@@ -13,7 +13,10 @@ class Dashing.RpaWig extends Dashing.Widget
 
 
   onData: (data) ->
-    # console.log('New data received:', data)
+    # var lastUpdated = widgetData.last_updated;
+    # console.log('New data lastUpdated:', lastUpdated)
+
+    console.log('New data received:', data)
     if data.status
       # clear existing "status-*" classes
       $(@get('node')).attr 'class', (i,c) ->
@@ -23,25 +26,61 @@ class Dashing.RpaWig extends Dashing.Widget
 
     @updateColor(data)
     
+    
 
     
   redirect: (data) ->
+    console.log('New data received2:', data.getAttribute('data-id'))
+    bot_index = data.getAttribute('data-id').split("rpa_lect")[1]
     if data? and data.innerText.trim() isnt ""
-        link_data = data.innerText.split("\n")[1]
+        link_data = data.innerText.split("\n")[0].split(" ")[1]
         console.log(link_data)
-        location.href = 'execution_data?bot_name=' + encodeURIComponent(link_data)
+        
+        location.href = 'execution_data?bot_name=' + encodeURIComponent(link_data) + '&bot_index=' + encodeURIComponent(bot_index)
         # location.href = 'execution_data'
     else
         console.log("not exist")
     
   updateColor: (data) ->
-    # console.log('New data received:',data, data.color_rules)
-    selector = "div[data-id='" + data.dataid + "']"
+    selector = "h4[class='more-info']"
     rpaElements = $(selector)
     rpaElements.each (index, element) ->
-      # console.log(
-      #   element
+      # console.log('Old data received:',
+      # element.innerText.split(" ");
       # )
+
+      dateParts = element.innerText.split(" ");
+      # console.log('Old data received:',
+      # dateParts[0]
+      # )
+      selector = "p[id='date']"
+      rpaElements = $(selector)
+      rpaElements.each (index, element) ->
+        # console.log("here",
+        #       element.innerText
+        #     )
+        $(element).text(dateParts[0])
+      selector = "p[id='time']"
+      rpaElements = $(selector)
+      rpaElements.each (index, element) ->
+        # console.log("here",
+        #       element.innerText
+        #     )
+        $(element).text(dateParts[1])
+      selector = "p[id='timezone']"
+      rpaElements = $(selector)
+      rpaElements.each (index, element) ->
+        # console.log("here",
+        #       element.innerText
+        #     )
+        $(element).text(dateParts[2])
+
+
+    # console.log('New data received:',data, data.color_rules)
+    selector = "div[data-id='" + data.dataid + "'] div"
+    rpaElements = $(selector)
+    rpaElements.each (index, element) ->
+      
 
       current = data.current
       if data.color_rules.rule_1_min < current < data.color_rules.rule_1_max
@@ -99,7 +138,7 @@ class Dashing.RpaWig extends Dashing.Widget
         $(element).css "color", data.color_rules.tail_fg_color_75_100
 
 
-    selector4 = "div[data-id='" + data.dataid + "'] span"
+    selector4 = "div[data-id='" + data.dataid + "'] svg"
     sElements = $(selector4)
     sElements.each (index, element) ->
 

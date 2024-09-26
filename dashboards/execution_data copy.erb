@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin Dashboard - Manage Your RPA Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffff" />
+    <meta
+      name="description"
+      content="Access your RPA dashboard to manage tasks efficiently. Update colors, change passwords, delete tail data, or logout. Welcome to your personalized admin panel."/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"/>
+    
+    <link rel="stylesheet" type="text/css" href="/css/botinfo_daymode.css" />
+  </head>
+    <style>
+    @font-face {
+      font-family: Xanadu;
+      src: url(/fonts/AnotherXanadu.ttf);
+    }
+    @font-face {
+      font-family: Montserrat;
+      src: url(/fonts/MontserratRegular.ttf);
+    }
+    @font-face {
+      font-family: Montserrat-bold;
+      src: url(/fonts/MontserratSemiBold.ttf);
+    }
+    .admin-panel {
+  height: 1024px;
+  padding-top: 182px;
+  padding-bottom: 182px;
+  background-color: var(--black_900);
+  background-image: url(../public/images/img_admin_panel.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.bot-name {
+  font-family: 'Montserrat-bold';
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 15.85px;
+  text-align: left;
+  color: #fff;
+  background: url(/images/vector-2.png);
+  background-repeat: no-repeat;
+  padding: 3.6px 24px;
+  margin: 0px 18px;
+}
+.bot-name_dark {
+  font-family: 'Montserrat-bold';
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 15.85px;
+  text-align: left;
+  color: #fff;
+  background: url(/images/bot_ar_vector_dark.svg);
+  background-repeat: no-repeat;
+  padding: 3.6px 24px;
+  margin: 0px 18px;
+}
+  .admin-panel {
+  height: 1024px;
+  padding-top: 182px;
+  padding-bottom: 182px;
+  background-color: var(--black_900);
+  background-image: url(/images/img_admin_panel.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+  .bot-name {
+    font-family: 'Montserrat-bold';
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 15.85px;
+    text-align: left;
+    color: #fff;
+    background: url(/images/vector-2.png);
+    background-repeat: no-repeat;
+    padding: 3.6px 24px;
+    margin: 0px 18px;
+  }
+  .bot-name_dark {
+    font-family: 'Montserrat-bold';
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 15.85px;
+    text-align: left;
+    color: #fff;
+    background: url(/images/bot_ar_vector_dark.svg);
+    background-repeat: no-repeat;
+    padding: 3.6px 24px;
+    margin: 0px 18px;
+  }
+  </style>
+
+  <body class="inner-pages_daymode">
+    <div class="admin-panel-three cus-container">
+      <div class="row">
+        <!-- header section -->
+        <div class="admin-panel-three__section">
+          <div class="admin-panel-three__column">
+            <header class="header" data-id="title_header">
+              <div class="header__top-row">
+                <h5 class="ui heading size-headingxs">
+                  <span> RPA&nbsp;</span>
+                  <span class="header__title-span"> DASHBOARD</span>
+                </h5>
+                <img
+                  src="/images/BOTinfo_header.svg"
+                  alt="Header Logo"
+                  class="bot_header__logo"/>
+                <div class="header__controls">
+                  <a href="#">
+                    <img
+                      src="/images/img_brightness.svg"
+                      alt="Brightness Icon"
+                      class="header__brightness"/>
+                  </a>
+                  <div class="header__mobile-wrapper">
+                    <img
+                      src="/images/img_mobile.svg"
+                      alt="Mobile Icon"
+                      class="header__mobile-icon"
+                    />
+                  </div>
+                </div>
+              </div>
+            </header>
+
+            <!-- date time section -->
+            <div class="date-time-row">
+              <div class="admin-panel-three__date-time-row">
+              <p  class="admin-panel-three__date ui text size-textxs" >
+              <span data-id="title_header_fg">
+              Wed, Aug 14 2024
+
+              </span>
+              </p>
+              <p class="admin-panel-three__date ui text size-textxs">
+              <span data-id="title_header_fg">
+              16:05:49
+              </span>
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+    </div>
+    
+    <div class="cus-container-2"> 
+
+      <div class="header_vector_nightmode">
+        <img
+          class="header_image_line w-100"
+          src="/images/bot_headervector_daymode.svg"
+          alt=""/>
+        <div class="row d-flex no-of-bots w-50" style="position: absolute;top: 27%;">
+          
+        
+        
+        <div class="col-md-6 bot_name_detail_nightmode">
+        <div data-id="pagination" data-view="PaginationBot">
+        </div>
+        
+        
+        
+        </div>
+
+
+
+
+          <img class="col-md-6 status-bt" src="/images/bot_status_INFO_day.svg" alt="botcolor_darkmode">
+        </div>
+      </div>
+
+      
+       <!-- Bot Card -->
+       <div class="botinfo  mt-5">
+     
+         <p class="bot-name">BOT AR05</p>
+         <div class="cus-card row">
+          <div class="left-side left col-md-2">
+              <button class="btn btn-dark " onclick="location.href='execution_data?bot_name=AR02';">BOT INFO</button>
+              <p style="padding-left:1px; margin-bottom:0px; font-size: 6px;">&nbsp;</p>
+              <button class="btn info-btn mb-5" onclick="location.href='execution_data_status?bot_name=AR02';">RECORDS</button>
+    
+
+        <div class="left_down mt-5">
+        <html>
+
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta http-equiv="Content-Style-Type" content="text/css" />
+            <meta name="generator" content="Aspose.Words for .NET 24.8.0" />
+            <title></title>
+            <style type="text/css">
+                body {
+                    font-family: 'Times New Roman';
+                    font-size: 12pt
+                }
+        
+                p {
+                    margin: 0pt
+                }
+            </style>
+        </head>
+        
+        <body>
+            <div>
+                <p><span
+                        style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline"><svg
+                            fill="none" font-family="Times New Roman" font-size="16" height="16" viewBox="0 0 101 15"
+                            width="101.32" xmlns="http://www.w3.org/2000/svg"
+                            style="width:101.32px; height:16px; font-family:'Times New Roman'; font-size:16px; fill:none">
+                            <path
+                                d="M23.75 3.62695H26.041V12H24.2305V5.0625H23L23.75 3.62695ZM29.0469 3.62695H36.0898L36.998 5.06836H37.666V7.0957H36.998L36.793 7.41797L37.4961 8.53125H38.1699V10.5645H37.4961L36.5879 12H29.0469V10.5645H36.3535V8.53125H30.1074V7.0957H35.8555V5.06836H29.0469V3.62695ZM43.2324 10.418V12.0117H41.1758V10.418H43.2324ZM43.2324 5.63086V7.22461H41.1758V5.63086H43.2324ZM46.2617 3.62695H53.9375L54.8457 5.0625H55.6309V7.85156L48.0723 9.15234V10.5645H55.6309V12H46.2617V7.95117L53.8203 6.5918V5.0625H46.2617V3.62695ZM58.6133 3.62695H67.748V4.79297L61.9297 12H59.5625L65.3281 5.0625H58.6133V3.62695ZM72.7988 10.418V12.0117H70.7422V10.418H72.7988ZM72.7988 5.63086V7.22461H70.7422V5.63086H72.7988ZM82.3848 3.62695H83.9727V8.70117H85.0449V10.1367H83.9727V12H82.1562V10.1367H75.8281V8.88867L82.3848 3.62695ZM82.1562 5.74805L78.7988 8.70117H82.1562V5.74805ZM88.0273 3.62695H97.3965V5.0625H89.8379V6.9668H97.3965V10.5645H96.7285L95.8203 12H88.0273V10.5645H95.5859V8.40234H88.0273V3.62695Z"
+                                fill="black" />
+                                <text>13:27:45</text>
+                            <g clip-path="url(#clip0_87_242)">
+                                <path
+                                    d="M7.5 13.125C10.6066 13.125 13.125 10.6066 13.125 7.5C13.125 4.3934 10.6066 1.875 7.5 1.875C4.3934 1.875 1.875 4.3934 1.875 7.5C1.875 10.6066 4.3934 13.125 7.5 13.125Z"
+                                    stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M7.5 4.21875V7.5H10.7812" stroke="black" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_87_242">
+                                    <rect fill="white" height="15" width="15" />
+                                </clipPath>
+                            </defs>
+                        </svg></span></p>
+            </div>
+                    
+        <span data-id="rpa_lect<%= params[:bot_index] %>" data-view="Botinfobox" ></span>
+
+
+          
+        </div>
+        </div>
+    
+      <div class="col-md-10 bg-botinfo">
+           <div class="header head-color">
+           <div class="row">
+           <div class="col-md-2"> 
+           <div data-id="pages_<%= params[:bot_name] %>" data-view="Table3" ></div>
+           </div>
+           <div>
+            
+              
+           </div>
+          </div>
+          </div>
+     
+    </div>
+    </div>
+    </body>
+        
+    </html>     
+    <div data-id="color_rules" data-view="UpdateColorValue">
+    </div>

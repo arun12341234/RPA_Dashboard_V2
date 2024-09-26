@@ -1,13 +1,57 @@
-
-
-  <h1>Select tail to delete</h1>
-  <form id="dropdown-form">
-    <select id="dropdown" name="options">
-        <!-- Options will be populated here -->
-      </select>
-      <button type="submit" class="submit-button">Delete</button>
-  </form>
-
-  <div id="update-color-message">
-
+<div style="width: 500px;" class="modal-dialog modal-dialog-centered modal-lg" aria-labelledby="deleteTailPopupLabel">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="deleteTailPopupLabel" style="color: black;">Delete Tail</h5>
+            <span class="close-btn" data-bs-dismiss="modal" aria-label="Close">x</span>
+        </div>
+        <form id="dropdown-form">
+            <div class="modal-body">
+                <select id="dropdown" name="options">
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="delete-btn btn btn-danger" style="background-color: #198754;">Delete</button>
+            </div>
+        </form>
+    </div>
+    <!-- Message to show when no dropdown options are available -->
+    <div id="no-tail-message" style="width: 100%;;text-align: center;color: aliceblue;display: none; text-align: center;">
+        
+        <p>No tail available</p>
+    </div>
+    <div id="update-color-message"></div>
   </div>
+  
+  <script>
+    $(document).ready(function() {
+      var $dropdown = $('#dropdown');
+      var $modalContent = $('.modal-content');
+      var $noTailMessage = $('#no-tail-message');
+    
+      // Function to toggle visibility based on options
+      function toggleModalContent() {
+        if ($dropdown.children('option').length === 0) {
+          $modalContent.hide();  
+          $noTailMessage.show();
+        } else {
+          $modalContent.show();
+          $noTailMessage.hide();
+        }
+      }
+    
+      // Call the function initially to check existing options
+      toggleModalContent();
+    
+      // Example: Simulate dynamically adding options (replace this with your actual logic)
+      setTimeout(function() {
+        $dropdown.append('<option value="1">Tail 1</option>');
+        $dropdown.append('<option value="2">Tail 2</option>');
+        
+        // Recheck the dropdown after options are added
+        toggleModalContent();
+      }, 1000);  // Simulate a delay for options being loaded dynamically
+    });
+    </script>
+    
+  

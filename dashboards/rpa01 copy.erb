@@ -1,0 +1,74 @@
+
+
+
+
+
+</div>
+<div class="container">
+<div data-id="pagination" data-view="Pagination">
+</div>
+
+<style>
+
+    .container {
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+    }
+
+
+</style>
+
+<div class="gridster">
+
+  <ul>
+    <!-- 1st row -->
+    <% (1..5).each do |i| %>
+      <li data-row="1" data-col="<%= i %>" data-sizex="1" data-sizey="1"> 
+        <div data-event-click="redirect" data-id="rpa_lect<%= i %>" data-view="RpaWig" data-title="" data-cool="90" data-warm="50"></div>
+      </li>
+    <% end %>
+
+    <!-- 2nd row -->
+    <% (6..10).each do |i| %>
+      <li data-row="2" data-col="<%= i - 5 %>" data-sizex="1" data-sizey="1"> 
+        <div data-event-click="redirect" data-id="rpa_lect<%= i %>" data-view="RpaWig" data-title="" data-cool="90" data-warm="50"></div>
+      </li>
+    <% end %>
+
+    <!-- 3rd row -->
+    <% (11..15).each do |i| %>
+      <li data-row="3" data-col="<%= i - 10 %>" data-sizex="1" data-sizey="1"> 
+        <div data-event-click="redirect" data-id="rpa_lect<%= i %>" data-view="RpaWig" data-title="" data-cool="90" data-warm="50"></div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div data-id="color_rules" data-view="UpdateColorValue">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

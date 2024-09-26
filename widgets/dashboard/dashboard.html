@@ -1,3 +1,169 @@
+
+    <div class="admin-panel-three cus-container">
+
+
+      <!-- welcome section -->
+      <div class="stackvectortwo">
+        <div class="dashboard-intro">
+          <p class="dashboard-intro__title ui text size-text2xl" style="color: wheat;">WELCOME TO <br />YOUR DASHBOARD</p>
+          <p class="dashboard-intro__subtitle ui text size-texts">What would you like to do?</p>
+          <div class="dashboard-intro__list row">
+            <!-- data-bs-toggle="modal" data-bs-target="#deleteTailPopup" -->
+              <div class=" col-md-3" >
+                
+                  <div class="delete-tail-component">
+                    <a href="/tail_delete">
+                      <p class="delete-tail-component__title ui text size-textlg" >DELETE TAIL DATA</p>
+                      <img
+                        src="/images/img_1048_basket_been.png"
+                        alt="Basket Image"
+                        class="delete-tail-component__image bin-component"
+                      />
+                    </a>
+                 
+                  </div>
+     
+              </div>
+      
+        
+            <div class="col-md-3">
+              <a href="/update_color">
+              <div class="update-color-component " >
+              <strong><p class="update-color-component__title ui text size-textlg">UPDATE COLORS</p></strong>
+              <img
+                src="/images/colorslider_icon.svg"
+                alt="Basket Image"
+                class="update-color-component__image"
+              />
+            </div>
+          </a>
+            </div>
+            <!-- data-bs-toggle="modal" data-bs-target="#popup3" -->
+            <div class="col-md-3" >
+              <div class="delete-tail-component ">
+                <a href="/change_password">
+                  <strong><p class="delete-tail-component__title ui text size-textlg">CHANGE<br />PASSWORD</p></strong>
+                  <img
+                    src="/images/img_1032_refresh_reload.png"
+                    alt="Basket Image"
+                    class="delete-tail-component__image "
+                  />
+                </a>
+        
+            </div>
+            </div>
+            <div  class="col-md-3" data-bs-toggle="modal" data-bs-target="#popup4">
+              <div class="logout-component">
+              <p class="logout-component__title ui text size-textlg">LOGOUT</p>
+              
+              <img src="/images/logout_icon.svg" alt="Basket Image" class="delete-tail-component__image" />
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="deleteTailPopup" tabindex="-1" aria-labelledby="deleteTailPopupLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="deleteTailPopupLabel">Delete Tail</h5>
+                  <span class="close-btn" data-bs-dismiss="modal" aria-label="Close">x</span>
+              </div>
+              <div class="modal-body">
+                  <select class="form-select select-tail" aria-label="Select tail to delete">
+                      <option selected>Select tail to delete</option>
+                      <option value="1">Tail 1</option>
+                      <option value="2">Tail 2</option>
+                      <option value="3">Tail 3</option>
+                  </select>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="delete-btn">Delete</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  
+  <div class="modal fade" id="popup2" tabindex="-1" aria-labelledby="popup2Label" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#popup2">
+      <div class="modal-dialog modal-dialog-centered">
+        <a href="/index.html">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <span class="close-btn" data-bs-dismiss="modal" aria-label="Close">x</span>
+              </div>
+              <div class="modal-body">
+                  <img src="/images/password.svg">
+              </div>
+              <div class="modal-footer">
+                  <button type="button-pass-channge" class="btn text-pass w-100" data-bs-dismiss="modal">PASSWORD CHANGED</button>
+              </div>
+          </div>
+        </a>
+      </div>
+  </div>
+
+  
+  <div class="modal fade" id="popup3" tabindex="-1" aria-labelledby="popup3Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="deleteTailPopupLabel">CHANGE PASSWORD</h5>
+              <span class="close-btn" data-bs-dismiss="modal" aria-label="Close">x</span>
+          </div>
+          <div class="modal-body">
+              <input class="form-input mb-3" placeholder="Current Password">
+              <input class="form-input mb-3" placeholder="Confirm Password">
+              <input class="form-input mb-3" placeholder="Confirm New Password">
+          </div>
+          <div class="modal-footer w-100">
+              <button type="button" class="change-btn w-100 btn-success"  data-bs-toggle="modal" data-bs-target="#popup2">CHANGE PASSWORD</button>
+          </div>
+      </div>
+      </div>
+  </div>
+
+  
+  <div class="modal fade" id="popup4" tabindex="-1" aria-labelledby="popup4Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" >CONFIRM LOGOUT</h5>
+                  <span class="close-btn" data-bs-dismiss="modal" aria-label="Close">x</span>
+              </div>
+              <div class="modal-body">
+                  <p class="confirm-msg">Are you sure you want to logout?</p>
+              </div>
+              <div class="modal-footer">
+                <!-- <button id="logout-button" class="dashboard-button">
+                  Logout
+              </button> -->
+                  <a id="logout-button" type="button-pass-channge" href="/logout" class="btn btn-danger text-pass w-100 confirm-logout" data-bs-dismiss="modal">CONFIRM LOGOUT</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
 <div data-bind="value"></div>
 <style>
     .dashboard-container {
@@ -42,4 +208,4 @@
     </button>
     </div>
     
-  </div>
+  </div> -->

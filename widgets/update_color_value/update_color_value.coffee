@@ -36,9 +36,11 @@ class Dashing.UpdateColorValue extends Dashing.Widget
     # Example: $(@node).fadeOut().fadeIn() will make the node flash each time data comes in.
 
 
-    selector5 = "table[data-id='title_header']"
+    selector5 = "[data-id='title_header']"
+    console.log("ok",selector5)
     thElements = $(selector5)
     thElements.each (index, element) ->
+      console.log("ok",element)
 
 
       $(element).css "background-color", data.title_bg_color
@@ -50,14 +52,15 @@ class Dashing.UpdateColorValue extends Dashing.Widget
       $(element).css "background-color", data.title_bg_color
       $(element).css "color", data.title_fg_color
 
-    selector7 = "table[data-id='title_header'] div h2"
+    selector7 = "[data-id='title_header'] div h5"
     thdElements = $(selector7)
     thdElements.each (index, element) ->
+      console.log("ok",element)
 
 
       $(element).css "color", data.title_fg_color
 
-    selector8 = "table[data-id='title_header'] h5"
+    selector8 = "[data-id='title_header_fg']"
     tdhElements = $(selector8)
     tdhElements.each (index, element) ->
 

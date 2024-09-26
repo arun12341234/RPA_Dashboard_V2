@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin Dashboard - Manage Your RPA Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffff" />
+    <meta
+      name="description"
+      content="Access your RPA dashboard to manage tasks efficiently. Update colors, change passwords, delete tail data, or logout. Welcome to your personalized admin panel."/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"/>
+    
+    <link rel="stylesheet" type="text/css" href="/css/botinfodetails-daymode.css" />
+  </head>
+  <style>
+  @font-face {
+    font-family: Xanadu;
+    src: url(/fonts/AnotherXanadu.ttf);
+  }
+  @font-face {
+    font-family: Montserrat;
+    src: url(/fonts/MontserratRegular.ttf);
+  }
+  @font-face {
+    font-family: Montserrat-bold;
+    src: url(/fonts/MontserratSemiBold.ttf);
+  }
+  .bot-name {
+    font-family: 'Montserrat-bold';
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 15.85px;
+    text-align: left;
+    color: #fff;
+    background: url(/images/bot_ar_vector.svg);
+    background-repeat: no-repeat;
+    padding: 3.6px 24px;
+    margin: 0px 18px;
+  }
+  .date-time-row {
+  margin: -10px auto;
+  background-image: url(/images/img_group_28.png);
+  background-size: contain;
+  padding: 6px;
+  width: 99%;
+  background-repeat: no-repeat;
+}
+  </style>
+
+  <body class="inner-pages_daymode">
+    <div class="admin-panel-three cus-container">
+      <div class="row">
+        <!-- header section -->
+        <div class="admin-panel-three__section">
+          <div class="admin-panel-three__column">
+            <header class="header" data-id="title_header">
+              <div class="header__top-row">
+                <h5 class="ui heading size-headingxs">
+                  <span> RPA&nbsp;</span>
+                  <span class="header__title-span"> DASHBOARD</span>
+                </h5>
+                <img
+                  src="/images/BOTinfo_header.svg"
+                  alt="Header Logo"
+                  class="bot_header__logo"/>
+                <div class="header__controls">
+                  <a href="#">
+                    <img
+                      src="/images/img_brightness.svg"
+                      alt="Brightness Icon"
+                      class="header__brightness"/>
+                  </a>
+                  <div class="header__mobile-wrapper">
+                    <img
+                      src="/images/img_mobile.svg"
+                      alt="Mobile Icon"
+                      class="header__mobile-icon"/>
+                  </div>
+                </div>
+              </div>
+            </header>
+
+            <!-- date time section -->
+            <div class="date-time-row">
+              <div class="admin-panel-three__date-time-row">
+              <p  class="admin-panel-three__date ui text size-textxs" >
+              <span data-id="title_header_fg">
+              Wed, Aug 14 2024
+
+              </span>
+              </p>
+              <p class="admin-panel-three__date ui text size-textxs">
+              <span data-id="title_header_fg">
+              16:05:49
+              </span>
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="cus-container-2"> 
+
+      <div class="header_vector_nightmode">
+        <img
+          class="header_image_line w-100"
+          src="/images/bot_headervector_daymode.svg"
+          alt=""/>
+        <div class="row d-flex no-of-bots w-50" style="position: absolute;top: 27%;">
+          <div class="col-md-6 bot_name_detail_nightmode">
+          <div data-id="pagination" data-view="PaginationBot">
+        </div>
+          </div>
+          <img class="col-md-6 status-bt" src="/images/bot_status_INFO_day.svg" alt="botcolor_darkmode">
+        </div>
+      </div>
+
+     <div class="row mt-5">
+      
+       <!-- Bot Card -->
+       <div class="bot_info_black_button mb-2">
+        <p class="bot-name">BOT AR05</p>
+        <div class="cus-card">
+          <div class="row p-3">
+            <!-- Left side -->
+            <div class="col-md-2  col-sm-12">
+              <div class="text-center">
+                <button class="bot_info_black_button info-btn" onclick="location.href='execution_data?bot_name=AR02';">BOT INFO</button>
+                <br />
+                <button class="records_button_black mt-2">RECORDS</button>
+              </div>
+              <br />
+              <div class="left_down mt-5">
+              <div data-id="rpa_lect<%= params[:bot_index] %>" data-view="Botinfobox" ></div>
+
+
+                
+              </div>
+            </div>
+      
+            <!-- Right side -->
+            <div class="col-md-10 col-sm-12">
+              <div class="header head-color">
+              <div data-id="pages2_<%= params[:bot_name] %>" data-view="Table2" ></div>
+
+
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div data-id="color_rules" data-view="UpdateColorValue">
+      </div>

@@ -25,7 +25,7 @@ class Dashing.Dashboard extends Dashing.Widget
       url: '/logout'
       success: (response) =>
         if response.success
-          alert "Logged out successfully."
+          # alert "Logged out successfully."
           window.location.reload()  # Reload the page after logout
         else
           alert "Failed to logout."

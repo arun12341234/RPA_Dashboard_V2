@@ -23,7 +23,8 @@ class Dashing.Pagination extends Dashing.Widget
     itemsPerPage = 15
     totalPages = Math.ceil(totalItems / itemsPerPage)
     maxButtons = Math.min(totalPages, 9)
-    console.log(maxButtons)
+    console.log("maxButtons",maxButtons)
+    $('#my-widget').html(maxButtons)
 
     paginationContainer = $('#pagination-1-container')
     paginationContainer.empty()
