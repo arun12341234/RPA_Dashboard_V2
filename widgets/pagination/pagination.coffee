@@ -36,5 +36,19 @@ class Dashing.Pagination extends Dashing.Widget
           window.location.href = "rpa0#{pageNum}"
         )(i)
         paginationContainer.append(li)
+        currentUrl = window.location.href;
+    console.log(currentUrl.split('/')[3]);
+    specificPart = currentUrl.split('/')[3]
+    if (specificPart.includes("rpa0"))
+      console.log("The substring 'rpa0' is present in the URL part.");
+      numberPart = specificPart.split("rpa0")[1];
+      console.log(
+        numberPart
+      )
+      initige = parseInt(numberPart, 10);
+      console.log(
+        "initige",initige
+      )
+      $('#current-page').text(initige)
 
 # Assuming you have additional setup code for Dashing.Widget and @get method handling elsewhere

@@ -28,9 +28,10 @@ class Dashing.PaginationBottom extends Dashing.Widget
 
     # Update the total pages display
     $('#my-widget1').text(totalPages)
+    $('#my-widget2').text(totalPages)
 
     # Update current page display
-    $('#current-page').text(@currentPage)
+    
     # console.log(
     #   "hello",$('.next-page').attr('onclick', "location.href='/rpa0#{@currentPage + 1}';")
     # )
@@ -40,6 +41,7 @@ class Dashing.PaginationBottom extends Dashing.Widget
     currentUrl = window.location.href;
     console.log(currentUrl.split('/')[3]);
     specificPart = currentUrl.split('/')[3]
+    $('#my-widget2').text(specificPart.split("rpa0")[1])
     if (specificPart.includes("rpa0"))
       console.log("The substring 'rpa0' is present in the URL part.");
       numberPart = specificPart.split("rpa0")[1];
@@ -50,10 +52,16 @@ class Dashing.PaginationBottom extends Dashing.Widget
       console.log(
         "initige",initige
       )
-      if initige>1
+      # $('#my-widget1').text(totalPages)
+      # console.log(
+      #   "initige",initige,$('#current-page').text("2")
+      # )
+      if initige > 1
         $('.prev-page').attr('onclick', "location.href='/rpa0#{initige-1}';")
-      if initige <= totalPages
+      if initige < totalPages
         $('.next-page').attr('onclick', "location.href='/rpa0#{initige+1}';")
+      # $('#current-page').text(initige)
+      
     else 
       console.log("The substring 'rpa0' is not present in the URL part.");
     

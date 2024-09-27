@@ -4,6 +4,11 @@
   // Widget-hotfloat styles
   // ----------------------------------------------------------------------------
   .widget-rpa-wig {
-  
+    p.bot-name:has(span[data-bind="suf_bot_name"]:empty) {
+      display: none;
+    }
+    div.card:has(span[data-bind="symble"]:empty) {
+      display: none;
+    }
   }
   

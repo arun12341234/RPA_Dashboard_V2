@@ -16,7 +16,7 @@ class Dashing.RpaWig extends Dashing.Widget
     # var lastUpdated = widgetData.last_updated;
     # console.log('New data lastUpdated:', lastUpdated)
 
-    console.log('New data received:', data)
+    console.log('now data received:', data)
     if data.status
       # clear existing "status-*" classes
       $(@get('node')).attr 'class', (i,c) ->
@@ -30,11 +30,11 @@ class Dashing.RpaWig extends Dashing.Widget
 
     
   redirect: (data) ->
-    console.log('New data received2:', data.getAttribute('data-id'))
+    # console.log('New data received2:', data.getAttribute('data-id'))
     bot_index = data.getAttribute('data-id').split("rpa_lect")[1]
     if data? and data.innerText.trim() isnt ""
         link_data = data.innerText.split("\n")[0].split(" ")[1]
-        console.log(link_data)
+        # console.log(link_data)
         
         location.href = 'execution_data?bot_name=' + encodeURIComponent(link_data) + '&bot_index=' + encodeURIComponent(bot_index)
         # location.href = 'execution_data'
@@ -42,6 +42,7 @@ class Dashing.RpaWig extends Dashing.Widget
         console.log("not exist")
     
   updateColor: (data) ->
+    # console.log("okkkkk")
     selector = "h4[class='more-info']"
     rpaElements = $(selector)
     rpaElements.each (index, element) ->
@@ -53,21 +54,21 @@ class Dashing.RpaWig extends Dashing.Widget
       # console.log('Old data received:',
       # dateParts[0]
       # )
-      selector = "p[id='date']"
+      selector = "[id='date']"
       rpaElements = $(selector)
       rpaElements.each (index, element) ->
         # console.log("here",
         #       element.innerText
         #     )
         $(element).text(dateParts[0])
-      selector = "p[id='time']"
+      selector = "[id='time']"
       rpaElements = $(selector)
       rpaElements.each (index, element) ->
         # console.log("here",
         #       element.innerText
         #     )
         $(element).text(dateParts[1])
-      selector = "p[id='timezone']"
+      selector = "[id='timezone']"
       rpaElements = $(selector)
       rpaElements.each (index, element) ->
         # console.log("here",
@@ -85,16 +86,18 @@ class Dashing.RpaWig extends Dashing.Widget
       current = data.current
       if data.color_rules.rule_1_min < current < data.color_rules.rule_1_max
         $(element).css "background-color", data.color_rules.tail_bg_color_0_25
+        $(element).css "color", data.color_rules.tail_bg_color_75_100
       else if data.color_rules.rule_2_min < current < data.color_rules.rule_2_max
         $(element).css "background-color", data.color_rules.tail_bg_color_25_50
       else if data.color_rules.rule_3_min < current < data.color_rules.rule_3_max
         $(element).css "background-color", data.color_rules.tail_bg_color_50_75
       else if data.color_rules.rule_4_min < current < data.color_rules.rule_4_max
         $(element).css "background-color", data.color_rules.tail_bg_color_75_100
-        # $(element).css "color", data.color_rules.tail_bg_color_75_100
-    selector1 = "div[data-id='" + data.dataid + "'] h1"
+        $(element).css "color", data.color_rules.tail_bg_color_75_100
+    selector1 = "div[data-id='" + data.dataid + "'] div span"
     h1Elements = $(selector1)
     h1Elements.each (index, element) ->
+      # console.log(element,data.current,"HAAAAA")
 
 
       current = data.current
@@ -106,6 +109,28 @@ class Dashing.RpaWig extends Dashing.Widget
         $(element).css "color", data.color_rules.tail_fg_color_50_75
       else if data.color_rules.rule_4_min < current < data.color_rules.rule_4_max
         $(element).css "color", data.color_rules.tail_fg_color_75_100
+    selector1 = "div[data-id='" + data.dataid + "'] div p"
+    h1Elements = $(selector1)
+    h1Elements.each (index, element) ->
+      # console.log(element,data.current,"HAAAAA")
+
+
+      current = data.current
+      if data.color_rules.rule_1_min < current < data.color_rules.rule_1_max
+        $(element).css "color", data.color_rules.tail_fg_color_0_25
+      else if data.color_rules.rule_2_min < current < data.color_rules.rule_2_max
+        $(element).css "color", data.color_rules.tail_fg_color_25_50
+      else if data.color_rules.rule_3_min < current < data.color_rules.rule_3_max
+        $(element).css "color", data.color_rules.tail_fg_color_50_75
+      else if data.color_rules.rule_4_min < current < data.color_rules.rule_4_max
+        $(element).css "color", data.color_rules.tail_fg_color_75_100
+
+
+
+
+
+
+
 
     selector2 = "div[data-id='" + data.dataid + "'] h4"
     h4Elements = $(selector2)
@@ -138,19 +163,30 @@ class Dashing.RpaWig extends Dashing.Widget
         $(element).css "color", data.color_rules.tail_fg_color_75_100
 
 
-    selector4 = "div[data-id='" + data.dataid + "'] svg"
+    selector4 = "div[data-id='" + data.dataid + "'] text"
     sElements = $(selector4)
     sElements.each (index, element) ->
+      console.log("svg now")
 
 
       current = data.current
+      textElement = $(element).find('text#time')  # Assuming you want to target the specific <text> element
+
       if data.color_rules.rule_1_min < current < data.color_rules.rule_1_max
-        $(element).css "color", data.color_rules.tail_fg_color_0_25
+        textElement.attr "fill", data.color_rules.tail_fg_color_0_25
       else if data.color_rules.rule_2_min < current < data.color_rules.rule_2_max
-        $(element).css "color", data.color_rules.tail_fg_color_25_50
+        textElement.attr "fill", data.color_rules.tail_fg_color_25_50
       else if data.color_rules.rule_3_min < current < data.color_rules.rule_3_max
-        $(element).css "color", data.color_rules.tail_fg_color_50_75
+        textElement.attr "fill", data.color_rules.tail_fg_color_50_75
       else if data.color_rules.rule_4_min < current < data.color_rules.rule_4_max
-        $(element).css "color", data.color_rules.tail_fg_color_75_100
+        textElement.attr "fill", data.color_rules.tail_fg_color_75_100
+          # if data.color_rules.rule_1_min < current < data.color_rules.rule_1_max
+      #   $(element).css "color", data.color_rules.tail_fg_color_0_25
+      # else if data.color_rules.rule_2_min < current < data.color_rules.rule_2_max
+      #   $(element).css "color", data.color_rules.tail_fg_color_25_50
+      # else if data.color_rules.rule_3_min < current < data.color_rules.rule_3_max
+      #   $(element).css "color", data.color_rules.tail_fg_color_50_75
+      # else if data.color_rules.rule_4_min < current < data.color_rules.rule_4_max
+      #   $(element).css "color", data.color_rules.tail_fg_color_75_100
 
     

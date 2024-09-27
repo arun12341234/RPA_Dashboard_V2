@@ -122,6 +122,8 @@ def fetch_and_update_dashboard
 
   # Update the dashboard with the fetched data
   data.each do |h|
+    # puts "suuuuuuuuuuuuuuuuuuuuuuuuu"
+    # puts h[:last_updated].strftime("%Y-%m-%d %H:%M:%S")
 
     # puts h
     send_event h[:dataid], {
@@ -129,7 +131,7 @@ def fetch_and_update_dashboard
       dataid: h[:dataid],
       bot_name: h[:bot_name],
       total_record: h[:column3],
-      last_updated: h[:last_updated],
+      last_updated: h[:last_updated].strftime("%Y-%m-%d %H:%M:%S"),
       comp_record: h[:column2],
       current: h[:percentage], 
       last: h[:percentage],
