@@ -20,7 +20,7 @@ class Dashing.Pagination extends Dashing.Widget
     console.log(arKeys)
     # arKeys = Object.keys(data).filter((key) -> key.startsWith('AR'))
     totalItems = arKeys.length
-    itemsPerPage = 15
+    itemsPerPage = 12
     totalPages = Math.ceil(totalItems / itemsPerPage)
     maxButtons = Math.min(totalPages, 9)
     console.log("maxButtons",maxButtons)

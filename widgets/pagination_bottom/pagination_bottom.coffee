@@ -23,7 +23,7 @@ class Dashing.PaginationBottom extends Dashing.Widget
     )
 
     totalItems = arKeys.length
-    itemsPerPage = 15
+    itemsPerPage = 12
     totalPages = Math.ceil(totalItems / itemsPerPage)
 
     # Update the total pages display

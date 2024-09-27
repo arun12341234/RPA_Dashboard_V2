@@ -15,69 +15,24 @@ class Dashing.Table3 extends Dashing.Widget
       # console.log("ok",index, $(element).text((index+1)))
       
       # console.log('t3 header data received:',(index + 1), data.pages[0]["col"+(index + 1)])
-    selector7 = "[id='trvalue']"
-    thdElements = $(selector7)
+    selector8 = "[id='trvalue']"
+    thdElements = $(selector8)
     thdElements.each (index, element) ->
       $(element).text(data.pages[0]["col"+(index + 1)])
       # console.log("ok",index, $(element).text(data.pages[0]["col"+(index + 1)]))
       
       # console.log('t3 header data received:',(index + 1), data.pages[0]["col"+(index + 1)])
+    selector9 = "[id='table3data']"
+    thdElements = $(selector9)
+    thdElements.each (index, element) ->
+      console.log($(element).find('#dynamicText').text())
+      # $(element)
+
+
+
+
+
     
-
-
-
-
-
-    # selector7 = "[id='dynamicText']"
-    # thdElements = $(selector7)
-
-    # Function to wrap text
-    wrapText = (textElement, width) ->
-      console.log(
-        "wowwww",
-        textElement
-      )
-      words = textElement.textContent.split(' ')
-      line = ''
-      lineHeight = 15 # Set line height for spacing
-
-      textElement.textContent = '' # Clear the original text
-      dy = parseFloat(textElement.getAttribute('y'))
-
-      for word in words
-        testLine = "#{line} #{word}"
-        # Create a temporary tspan to check text width
-        testTspan = document.createElementNS("http://www.w3.org/2000/svg", 'tspan')
-        testTspan.textContent = testLine.trim()
-        textElement.appendChild(testTspan)
-        
-        # Check the width
-        if testTspan.getComputedTextLength() > width
-          textElement.removeChild(testTspan)
-          tspan = document.createElementNS("http://www.w3.org/2000/svg", 'tspan')
-          tspan.setAttribute('x', textElement.getAttribute('x'))
-          tspan.setAttribute('dy', lineHeight)
-          tspan.textContent = line.trim()
-          textElement.appendChild(tspan)
-          
-          line = word + ' '
-        else
-          line = testLine
-
-      # Append the last line
-      tspan = document.createElementNS("http://www.w3.org/2000/svg", 'tspan')
-      tspan.setAttribute('x', textElement.getAttribute('x'))
-      tspan.setAttribute('dy', lineHeight)
-      tspan.textContent = line.trim()
-      textElement.appendChild(tspan)
-
-    # On DOM ready
-    document.addEventListener 'DOMContentLoaded', ->
-      console.log("start")
-      dynamicText = document.getElementById('dynamicText')
-      wrapText(dynamicText, 100) # Call the function to wrap text within 100px width
-
-
 
 
 
