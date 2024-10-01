@@ -1,0 +1,285 @@
+@font-face {
+    font-family: Xanadu;
+    src: url(/fonts/AnotherXanadu.ttf);
+  }
+  @font-face {
+    font-family: Montserrat;
+    src: url(/fonts/MontserratRegular.ttf);
+  }
+  @font-face {
+    font-family: Montserrat-bold;
+    src: url(/fonts/MontserratSemiBold.ttf);
+  }
+  body {
+    color: #111;
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+
+  }
+  .p{
+    color: #000;
+  }
+  .card_time
+  {
+  width: 50%;
+  }
+  
+  .centre-item
+  {
+    width: 55px;height: 16px;gap: 0px;opacity: 0px;
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+  }
+  .preview_bot-list {
+    width: 34x;
+    height: 524px;
+    top: 165px;
+    left: 1024px;
+    gap: 0px;
+    border-radius: 10px 0px 0px 0px;
+    opacity: 0px;
+    background: #FFFFFF;
+  }
+  
+  .preview-ui-text {
+    height: 23px;
+    top: 192px;
+    left: 1125px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Xanadu;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23.01px;
+    text-align: center;
+    color: #000000;
+  }
+  .preview_bot {
+    padding: 8px 20px 20px 20px !important; 
+    border-radius: 15px!important;
+  }
+  
+  .preview_bot h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #0000;
+  }
+  
+  .card {
+    /* margin: 20%;
+    padding: 16px; */
+    border-radius: 10px;
+  }
+  
+  .card .header {
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .card .header span {
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .card .header .time p {
+    font-family: Xanadu;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 13.8px;
+  text-align: left;
+  
+  }
+  
+  .card .percentage span{
+    font-family: Xanadu;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 73.63px;
+  letter-spacing: -0.13em;
+  text-align: left;
+  color:#FFCC00;
+  }
+  
+  .card .percentage p {
+    font-family: Xanadu;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 17.26px;
+  text-align: center;
+  color:#FFCC00;
+  }
+  .percentage {
+    margin: 60px 0 70px 0;
+  }
+  .left-arrow
+  {
+    width: 28px;height: 28px;top: 38px;left: 74px;gap: 0px;opacity: 0px;background: #000000;
+    border: 2px solid #FFFFFF
+  }
+  
+  .ui.heading.size-headingxs{
+    font-family: Montserrat-bold;
+  }
+  .page-item
+  {
+    width: 5%;height: 16px;gap: 0px;opacity: 0px;
+    
+
+  }
+  .page-number{
+    font-family: Inter;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  
+  .btn-custom{
+    background:#E9E9E9;
+  }
+  .rule .btn{
+    font-size: 14px;
+  }
+  .bot-name {
+    font-family: 'Montserrat-bold';
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 15.85px;
+    text-align: left;
+    color: #fff;
+    background: url(images/bot_ar_vector.svg);
+    background-repeat: no-repeat;
+    padding: 3.6px 24px;
+    margin: 0px 18px;
+  }
+  .preview-icon{
+      width: 15px;
+      margin-right: 10px;
+  }
+  .inner-pages{
+    background: #000000;
+  }
+  
+  
+  .bin-component{
+    width: 30%;
+  }
+  
+  /* Ensure equal height for cards */
+.card {
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Small screen adjustments */
+  @media (max-width: 768px) {
+    .col-md-4 {
+      max-width: 100%;
+    }
+  }
+  
+
+  .header_vector_daymode{
+
+  width: 1302.5px;height: 32.5px;top: 152px;left: 74px;gap: 0px;border: 0.5px 0px 0px 0px;opacity: 0px;
+  border: 0.5px  #000000
+  }
+  .header_vector_nightmode{
+
+    width: 1302.5px;height: 32.5px;top: 152px;left: 74px;gap: 0px;border: 0.5px 0px 0px 0px;opacity: 0px;
+    border: 0.5px  #FFFFFF;
+    }
+    .row_text
+    {
+        font-family: Another Xanadu;
+        font-size: 13px;font-weight: 400;line-height: 14.96px;letter-spacing: -0.13em;text-align: left;
+        height: 15px;top: 164px;left: 80px;gap: 0px;opacity: 0px;
+    }
+
+    .bot_name_detail{
+      width: 226%;
+      font-size: 219%;
+      color: #FFFFFF;
+    }
+    .timedate{
+      width: 60%;
+    }
+    .page-number_dark
+    {
+      
+    font-family: Inter;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    color: #000000;
+    }
+    
+    .header_image_line
+    {
+     width: 200%; 
+    }
+    .bot_name_detail_daymode
+  {
+   color:#000000;
+   width: 226%;
+      font-size: 219%;
+  }
+  /* Custom Card Styling */
+.custom-card {
+  width: 1297px;
+  height: 487px;
+  position: absolute;
+  top: 253px;
+  left: 80px;
+  gap: 0px;
+  border-radius: 10px;
+  border-top: 1px solid #AFAFAF;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+  opacity: 1; 
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.container_botinfo
+{
+  width: 1297px;height: 487px;top: 253px;left: 80px;gap: 0px;border-radius: 10px 0px 0px 0px;border: 1px 0px 0px 0px;opacity: 0px;
+}
+
+.custom-table {
+  font-size: 10px; 
+}
+
+.custom-table th {
+  background: #787878;
+  font-family: Another Xanadu;font-size: 10px;font-weight: 400;line-height: 11.5px;text-align: left;
+  width: 141px;height: 12px;top: 300px;left: 301px;gap: 0px;opacity: 0px;
+}
+
+.custom-table td {
+ 
+  font-family: Montserrat;font-size: 12px;font-weight: 500;line-height: 14.63px;text-align: left;
+}.custom-table tbody tr:hover {
+  background-color: #e9ecef; /* Hover effect */
+}
+
+.custom-table td, .custom-table th {
+  padding: 15px; /* Custom padding */
+}
+#t_heading
+{
+  background: #787878;
+  font-family: Another Xanadu;font-size: 10px;font-weight: 400;line-height: 11.5px;text-align: left;
+  width: 141px;height: 12px;top: 300px;left: 301px;gap: 0px;opacity: 0px; 
+}
