@@ -28,7 +28,7 @@ class Dashing.TailDelete extends Dashing.Widget
         contentType: 'application/json'
         data: JSON.stringify({ selectedOption: selectedOption })
         success: (response) ->
-          console.log(response)
+          console.log("response",response)
           if response.success
             $('#update-color-message').html("Tail Deleted").css({
               'background-color': 'green',
@@ -43,6 +43,7 @@ class Dashing.TailDelete extends Dashing.Widget
           else
             $('#update-color-message').text('Operation failed').css('color', 'red')
         error: (xhr, status, error) ->
+          console.log(error)
           $('#update-color-message').text("Error: #{error}").css('color', 'red')
 
   onData: (data) ->
