@@ -713,7 +713,7 @@ h1 {
 
 .color-box-1 {
   border-radius: 10px;
-  background: #FF0000;
+  /* background: transparent; */
 }
 
 .color-box-2 {

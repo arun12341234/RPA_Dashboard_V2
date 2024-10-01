@@ -84,14 +84,14 @@ class Dashing.RpaWig extends Dashing.Widget
       
 
       current = data.current
-      if data.color_rules.rule_1_min <= current <= cata.color_rules.rule_1_max
+      if data.color_rules.rule_1_min <= current <= data.color_rules.rule_1_max
         $(element).css "background-color", data.color_rules.tail_bg_color_0_25
         $(element).css "color", data.color_rules.tail_bg_color_75_100
-      else if data.color_rules.rule_2_min <= current <= cata.color_rules.rule_2_max
+      else if data.color_rules.rule_2_min <= current <= data.color_rules.rule_2_max
         $(element).css "background-color", data.color_rules.tail_bg_color_25_50
-      else if data.color_rules.rule_3_min <= current <= cata.color_rules.rule_3_max
+      else if data.color_rules.rule_3_min <= current <= data.color_rules.rule_3_max
         $(element).css "background-color", data.color_rules.tail_bg_color_50_75
-      else if data.color_rules.rule_4_min <= current <= cata.color_rules.rule_4_max
+      else if data.color_rules.rule_4_min <= current <= data.color_rules.rule_4_max
         $(element).css "background-color", data.color_rules.tail_bg_color_75_100
         $(element).css "color", data.color_rules.tail_bg_color_75_100
     selector1 = "div[data-id='" + data.dataid + "'] div span"
@@ -101,13 +101,13 @@ class Dashing.RpaWig extends Dashing.Widget
 
 
       current = data.current
-      if data.color_rules.rule_1_min <= current <= cata.color_rules.rule_1_max
+      if data.color_rules.rule_1_min <= current <= data.color_rules.rule_1_max
         $(element).css "color", data.color_rules.tail_fg_color_0_25
-      else if data.color_rules.rule_2_min <= current <= cata.color_rules.rule_2_max
+      else if data.color_rules.rule_2_min <= current <= data.color_rules.rule_2_max
         $(element).css "color", data.color_rules.tail_fg_color_25_50
-      else if data.color_rules.rule_3_min <= current <= cata.color_rules.rule_3_max
+      else if data.color_rules.rule_3_min <= current <= data.color_rules.rule_3_max
         $(element).css "color", data.color_rules.tail_fg_color_50_75
-      else if data.color_rules.rule_4_min <= current <= cata.color_rules.rule_4_max
+      else if data.color_rules.rule_4_min <= current <= data.color_rules.rule_4_max
         $(element).css "color", data.color_rules.tail_fg_color_75_100
     selector1 = "div[data-id='" + data.dataid + "'] div p"
     h1Elements = $(selector1)
@@ -180,13 +180,13 @@ class Dashing.RpaWig extends Dashing.Widget
         textElement.attr "fill", data.color_rules.tail_fg_color_50_75
       else if data.color_rules.rule_4_min <= current <= data.color_rules.rule_4_max
         textElement.attr "fill", data.color_rules.tail_fg_color_75_100
-          # if data.color_rules.rule_1_min <= current <= cata.color_rules.rule_1_max
+          # if data.color_rules.rule_1_min <= current <= data.color_rules.rule_1_max
       #   $(element).css "color", data.color_rules.tail_fg_color_0_25
-      # else if data.color_rules.rule_2_min <= current <= cata.color_rules.rule_2_max
+      # else if data.color_rules.rule_2_min <= current <= data.color_rules.rule_2_max
       #   $(element).css "color", data.color_rules.tail_fg_color_25_50
-      # else if data.color_rules.rule_3_min <= current <= cata.color_rules.rule_3_max
+      # else if data.color_rules.rule_3_min <= current <= data.color_rules.rule_3_max
       #   $(element).css "color", data.color_rules.tail_fg_color_50_75
-      # else if data.color_rules.rule_4_min <= current <= cata.color_rules.rule_4_max
+      # else if data.color_rules.rule_4_min <= current <= data.color_rules.rule_4_max
       #   $(element).css "color", data.color_rules.tail_fg_color_75_100
 
     
