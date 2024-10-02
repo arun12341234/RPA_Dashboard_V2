@@ -81,5 +81,50 @@ class Dashing.UpdateColorValue extends Dashing.Widget
       $(element).css "background-color", data.page_bg_color
       $(element).css "color", data.page_fg_color
 
+      # $(element).css "background-color", data.page_bg_color
+      # $(element).css "color", data.page_fg_color
 
 
+
+    # selector2 = "div[data-id='" + data.dataid + "'] h4"
+    # h4Elements = $(selector2)
+    # h4Elements.each (index, element) ->
+    # i want Dashing.AnimatedValue also
+    selector12 = "[id='preview-value']"
+    tdhhElements = $(selector12)
+    tdhhElements.each (index, element) ->
+      console.log("preview",)
+
+
+      current = $(element).text().split("%")[0]
+      console.log(data)
+    
+      selector11 = "[id='preview']"
+      tdhhElements = $(selector11)
+      tdhhElements.each (index, element1) ->
+        console.log("preview",element1)
+
+        if data.rule_1_min <= current <= data.rule_1_max
+          $(element).css "color", data.tail_fg_color_0_25
+          $(element).css "background-color", data.tail_bg_color_0_25
+          $(element1).css "color", data.tail_fg_color_0_25
+          $(element1).css "background-color", data.tail_bg_color_0_25
+        else if data.rule_2_min <= current <= data.rule_2_max
+          $(element).css "color", data.tail_fg_color_25_50
+          $(element).css "background-color", data.tail_bg_color_25_50
+          $(element1).css "color", data.tail_fg_color_25_50
+          $(element1).css "background-color", data.tail_bg_color_25_50
+
+        else if data.rule_3_min <= current <= data.rule_3_max
+          $(element).css "color", data.tail_fg_color_50_75
+          $(element).css "background-color", data.tail_bg_color_50_75
+          $(element1).css "color", data.tail_fg_color_50_75
+          $(element1).css "background-color", data.tail_bg_color_50_75
+
+        else if data.rule_4_min <= current <= data.rule_4_max
+          $(element).css "color", data.tail_fg_color_75_100
+          $(element).css "background-color", data.tail_bg_color_75_100
+          $(element1).css "color", data.tail_fg_color_75_100
+          $(element1).css "background-color", data.tail_bg_color_75_100
+
+  
