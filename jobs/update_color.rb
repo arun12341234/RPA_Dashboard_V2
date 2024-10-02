@@ -31,6 +31,48 @@ post '/update_color' do
   rule_4_max_value = params[:rule_4_max]
   
   begin
+
+
+    # Connect to MySQL server
+    client = Mysql2::Client.new(
+      host: ENV['DB_HOST'],
+      username: ENV['DB_USERNAME'],
+      password: ENV['DB_PASSWORD'],
+      database: ENV['DB_DATABASE'],
+      port: ENV['DB_PORT']
+    )
+
+    # Check how many rows exist in the color_rules table
+    count_query = "SELECT COUNT(*) AS row_count FROM color_rules;"
+    result = client.query(count_query)
+    row_count = result.first['row_count']
+
+    if row_count > 1
+      # Delete all rows except the most recent one using a JOIN
+      delete_query = <<-SQL
+        DELETE cr1 
+        FROM color_rules cr1
+        JOIN (
+          SELECT id 
+          FROM color_rules 
+          ORDER BY id DESC 
+          LIMIT 1
+        ) cr2 ON cr1.id != cr2.id;
+      SQL
+      client.query(delete_query)
+      puts "Deleted #{row_count - 1} old rows from color_rules."
+      client.close
+    end
+
+
+
+
+
+
+
+
+
+
     # Connect to MySQL server
     client = Mysql2::Client.new(
         # :host => 'localhost',

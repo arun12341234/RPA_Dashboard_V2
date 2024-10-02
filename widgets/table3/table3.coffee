@@ -20,13 +20,33 @@ class Dashing.Table3 extends Dashing.Widget
     thdElements.each (index, element) ->
       $(element).text(data.pages[0]["col"+(index + 1)])
       # console.log("ok",index, $(element).text(data.pages[0]["col"+(index + 1)]))
-      
-      # console.log('t3 header data received:',(index + 1), data.pages[0]["col"+(index + 1)])
+          
     selector9 = "[id='table3data']"
-    thdElements = $(selector9)
+    thdElements = $(selector9) 
+
     thdElements.each (index, element) ->
-      console.log($(element).find('#dynamicText').text())
-      # $(element)
+      # Get the length of the value for the current header
+      valueLength = data.table_headers[index].value.length
+
+      # Log the index and value length
+      console.log("woe", index, valueLength)
+      # Base width for length of 1
+      baseWidth = 100
+      # Scaling factor for each additional character
+      scalingFactor = 11
+      
+      width = baseWidth + (valueLength - 1) * scalingFactor
+      $(element).css("width", "#{width}px")
+      # # Set the width based on the value length
+      # if 0 < valueLength < 10
+      #   $(element).css("width", "200px")
+      # else if 10 < valueLength < 20
+      #   $(element).css("width", "250px")  # Adjust width as needed
+      # else if 20 < valueLength < 30
+      #   $(element).css("width", "400px")
+      # else if 30 < valueLength < 40
+      #   $(element).css("width", "350px")  # Adjust width as needed
+
 
 
 
