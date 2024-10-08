@@ -55,7 +55,7 @@ gem install smashing
 ### Step 4: Download dashboad template
 
 ```bash
-git clone https://github.com/arun12341234/rpa_dashboard_final.git
+git clone https://github.com/arun12341234/RPA_Dashboard_V2.git
 ````
 
 ## Deploying the Dashboard with Docker
